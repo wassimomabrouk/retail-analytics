@@ -1,0 +1,1625 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20262.26.0708.1337                               -->
+<workbook _.fcp.WorkbookFingerprinting.true...author-id='aff44b3cca822d9e4939f9ffdbf4e566605edee84e06fb1910f7582c56e9c293' _.fcp.WorkbookFingerprinting.true...creator-author-id='aff44b3cca822d9e4939f9ffdbf4e566605edee84e06fb1910f7582c56e9c293' _.fcp.WorkbookFingerprinting.true...creator-license-type='public' _.fcp.WorkbookFingerprinting.true...creator-machine-id='d771aedfcfed1412b6379c0a8978a1326a400290dc5e0f821b7403b216612a3e' _.fcp.WorkbookFingerprinting.true...license-type='public' _.fcp.WorkbookFingerprinting.true...machine-id='d771aedfcfed1412b6379c0a8978a1326a400290dc5e0f821b7403b216612a3e' locale='en_CA' original-version='18.1' source-build='2026.2.1 (20262.26.0708.1337)' source-platform='win' version='18.1' xml:base='https://public.tableau.com' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AccessibleZoneTabOrder />
+    <AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <IntuitiveSorting />
+    <IntuitiveSorting_SP2 />
+    <MapboxVectorStylesAndLayers />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelExtractV2 />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <VConnDownstreamExtractsWithWarnings />
+    <WindowsPersistSimpleIdentifiers />
+    <_.fcp.WorkbookFingerprinting.true...WorkbookFingerprinting />
+  </document-format-change-manifest>
+  <repository-location id='OlistMarketplaceAnalytics_17878955790140' path='/workbooks' revision='1.0' />
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='monthly_revenue' inline='true' name='federated.1jnw30x1row32m15sl93p1xgl2uu' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='monthly_revenue' name='textscan.13imqk703inyoh11c6hnh0vyagkc'>
+            <connection class='textscan' directory='C:/Users/wassi/Desktop/retail-analytics/data/processed' filename='monthly_revenue.csv' password='' server='' workgroup-auth-mode='as-is' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.13imqk703inyoh11c6hnh0vyagkc' name='monthly_revenue.csv' table='[monthly_revenue#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='fr_FR'>
+            <column datatype='date' name='purchase_month' ordinal='0' />
+            <column datatype='integer' name='orders' ordinal='1' />
+            <column datatype='real' name='revenue' ordinal='2' />
+            <column datatype='real' name='aov' ordinal='3' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[monthly_revenue.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;fr_FR&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;€&quot;</attribute>
+              <attribute datatype='string' name='decimal-char'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;fr_FR&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='thousands-char'>&quot; &quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>purchase_month</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[purchase_month]</local-name>
+            <parent-name>[monthly_revenue.csv]</parent-name>
+            <remote-alias>purchase_month</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[monthly_revenue.csv_B4E6BCC3263A4D0B9B2BE3E8F2A80C4F]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>orders</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[orders]</local-name>
+            <parent-name>[monthly_revenue.csv]</parent-name>
+            <remote-alias>orders</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[monthly_revenue.csv_B4E6BCC3263A4D0B9B2BE3E8F2A80C4F]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>revenue</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[revenue]</local-name>
+            <parent-name>[monthly_revenue.csv]</parent-name>
+            <remote-alias>revenue</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[monthly_revenue.csv_B4E6BCC3263A4D0B9B2BE3E8F2A80C4F]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>aov</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[aov]</local-name>
+            <parent-name>[monthly_revenue.csv]</parent-name>
+            <remote-alias>aov</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[monthly_revenue.csv_B4E6BCC3263A4D0B9B2BE3E8F2A80C4F]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='monthly_revenue.csv' datatype='table' name='[__tableau_internal_object_id__].[monthly_revenue.csv_B4E6BCC3263A4D0B9B2BE3E8F2A80C4F]' role='measure' type='quantitative' />
+      <column caption='Aov' datatype='real' name='[aov]' role='measure' type='quantitative' />
+      <column caption='Orders' datatype='integer' name='[orders]' role='measure' type='quantitative' />
+      <column caption='Month' datatype='date' name='[purchase_month]' role='dimension' type='ordinal' />
+      <column caption='Revenue' datatype='real' name='[revenue]' role='measure' type='quantitative' />
+      <extract count='-1' enabled='true' object-id='' units='records' user-specific='false'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='C:/Users/wassi/AppData/Local/Temp/TableauTemp/#TableauTemp_1gk55lq11c49wo19a61cl0muu2fu.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>purchase_month</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[purchase_month]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>purchase_month</remote-alias>
+              <ordinal>0</ordinal>
+              <family>monthly_revenue.csv</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>23</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>orders</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[orders]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>orders</remote-alias>
+              <ordinal>1</ordinal>
+              <family>monthly_revenue.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>22</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>revenue</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[revenue]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>revenue</remote-alias>
+              <ordinal>2</ordinal>
+              <family>monthly_revenue.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>23</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>aov</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[aov]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>aov</remote-alias>
+              <ordinal>3</ordinal>
+              <family>monthly_revenue.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>23</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Germany&quot;' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+      <object-graph>
+        <objects>
+          <object caption='monthly_revenue.csv' id='monthly_revenue.csv_B4E6BCC3263A4D0B9B2BE3E8F2A80C4F'>
+            <properties context=''>
+              <relation connection='textscan.13imqk703inyoh11c6hnh0vyagkc' name='monthly_revenue.csv' table='[monthly_revenue#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='fr_FR'>
+                  <column datatype='date' name='purchase_month' ordinal='0' />
+                  <column datatype='integer' name='orders' ordinal='1' />
+                  <column datatype='real' name='revenue' ordinal='2' />
+                  <column datatype='real' name='aov' ordinal='3' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+    <datasource caption='category_revenue' inline='true' name='federated.0vg9upq0l62xdz19r7h6309e9s7h' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='category_revenue' name='textscan.018aeco08vhsaa15lv7n50q8mp7k'>
+            <connection class='textscan' directory='C:/Users/wassi/Desktop/retail-analytics/data/processed' filename='category_revenue.csv' password='' server='' workgroup-auth-mode='as-is' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.018aeco08vhsaa15lv7n50q8mp7k' name='category_revenue.csv' table='[category_revenue#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='fr_FR'>
+            <column datatype='string' name='category' ordinal='0' />
+            <column datatype='real' name='revenue' ordinal='1' />
+            <column datatype='integer' name='orders' ordinal='2' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[category_revenue.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;fr_FR&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;€&quot;</attribute>
+              <attribute datatype='string' name='decimal-char'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;fr_FR&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='thousands-char'>&quot; &quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>category</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[category]</local-name>
+            <parent-name>[category_revenue.csv]</parent-name>
+            <remote-alias>category</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LFR_RFR' />
+            <object-id>[category_revenue.csv_E586E6A53AB24C02876A0B38B078F67F]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>revenue</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[revenue]</local-name>
+            <parent-name>[category_revenue.csv]</parent-name>
+            <remote-alias>revenue</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[category_revenue.csv_E586E6A53AB24C02876A0B38B078F67F]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>orders</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[orders]</local-name>
+            <parent-name>[category_revenue.csv]</parent-name>
+            <remote-alias>orders</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[category_revenue.csv_E586E6A53AB24C02876A0B38B078F67F]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='category_revenue.csv' datatype='table' name='[__tableau_internal_object_id__].[category_revenue.csv_E586E6A53AB24C02876A0B38B078F67F]' role='measure' type='quantitative' />
+      <column caption='Category' datatype='string' name='[category]' role='dimension' type='nominal' />
+      <column caption='Orders' datatype='integer' name='[orders]' role='measure' type='quantitative' />
+      <column caption='Revenue' datatype='real' name='[revenue]' role='measure' type='quantitative' />
+      <extract count='-1' enabled='true' object-id='' units='records' user-specific='false'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='C:/Users/wassi/AppData/Local/Temp/TableauTemp/#TableauTemp_1ln6vvp1kc2lga1cicplt1gdv5xu.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>category</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[category]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>category</remote-alias>
+              <ordinal>0</ordinal>
+              <family>category_revenue.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>12</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LFR_RFR' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>revenue</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[revenue]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>revenue</remote-alias>
+              <ordinal>1</ordinal>
+              <family>category_revenue.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>12</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>orders</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[orders]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>orders</remote-alias>
+              <ordinal>2</ordinal>
+              <family>category_revenue.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>12</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Germany&quot;' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+      <object-graph>
+        <objects>
+          <object caption='category_revenue.csv' id='category_revenue.csv_E586E6A53AB24C02876A0B38B078F67F'>
+            <properties context=''>
+              <relation connection='textscan.018aeco08vhsaa15lv7n50q8mp7k' name='category_revenue.csv' table='[category_revenue#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='fr_FR'>
+                  <column datatype='string' name='category' ordinal='0' />
+                  <column datatype='real' name='revenue' ordinal='1' />
+                  <column datatype='integer' name='orders' ordinal='2' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+    <datasource caption='state_revenue' inline='true' name='federated.1n7uct21z0f6ld112wmw21e7do8p' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='state_revenue' name='textscan.0ccqm150hllaqb12yczko1yahai3'>
+            <connection class='textscan' directory='C:/Users/wassi/Desktop/retail-analytics/data/processed' filename='state_revenue.csv' password='' server='' workgroup-auth-mode='as-is' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.0ccqm150hllaqb12yczko1yahai3' name='state_revenue.csv' table='[state_revenue#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='fr_FR'>
+            <column datatype='string' name='customer_state' ordinal='0' />
+            <column datatype='real' name='revenue' ordinal='1' />
+            <column datatype='integer' name='customers' ordinal='2' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[state_revenue.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;fr_FR&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;€&quot;</attribute>
+              <attribute datatype='string' name='decimal-char'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;fr_FR&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='thousands-char'>&quot; &quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>customer_state</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[customer_state]</local-name>
+            <parent-name>[state_revenue.csv]</parent-name>
+            <remote-alias>customer_state</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LFR_RFR' />
+            <object-id>[state_revenue.csv_F399F74A74D14DE78608D1CB987B5459]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>revenue</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[revenue]</local-name>
+            <parent-name>[state_revenue.csv]</parent-name>
+            <remote-alias>revenue</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[state_revenue.csv_F399F74A74D14DE78608D1CB987B5459]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>customers</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[customers]</local-name>
+            <parent-name>[state_revenue.csv]</parent-name>
+            <remote-alias>customers</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[state_revenue.csv_F399F74A74D14DE78608D1CB987B5459]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='state_revenue.csv' datatype='table' name='[__tableau_internal_object_id__].[state_revenue.csv_F399F74A74D14DE78608D1CB987B5459]' role='measure' type='quantitative' />
+      <column caption='Customer State' datatype='string' name='[customer_state]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+      <column caption='Customers' datatype='integer' name='[customers]' role='measure' type='quantitative' />
+      <column caption='Revenue' datatype='real' name='[revenue]' role='measure' type='quantitative' />
+      <extract count='-1' enabled='true' object-id='' units='records' user-specific='false'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='C:/Users/wassi/AppData/Local/Temp/TableauTemp/#TableauTemp_0e9tq2p1umwjwg11ji9j61i5ve0v.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>customer_state</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[customer_state]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>customer_state</remote-alias>
+              <ordinal>0</ordinal>
+              <family>state_revenue.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>27</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LFR_RFR' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>revenue</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[revenue]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>revenue</remote-alias>
+              <ordinal>1</ordinal>
+              <family>state_revenue.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>27</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>customers</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[customers]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>customers</remote-alias>
+              <ordinal>2</ordinal>
+              <family>state_revenue.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>26</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Brazil&quot;' />
+        <semantic-value key='[State].[Name]' value='%null%' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+      <object-graph>
+        <objects>
+          <object caption='state_revenue.csv' id='state_revenue.csv_F399F74A74D14DE78608D1CB987B5459'>
+            <properties context=''>
+              <relation connection='textscan.0ccqm150hllaqb12yczko1yahai3' name='state_revenue.csv' table='[state_revenue#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='fr_FR'>
+                  <column datatype='string' name='customer_state' ordinal='0' />
+                  <column datatype='real' name='revenue' ordinal='1' />
+                  <column datatype='integer' name='customers' ordinal='2' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+    <datasource caption='rfm_segments' inline='true' name='federated.0wloltz0rl5azh1es5f1u0tgdfsx' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='rfm_segments' name='textscan.1633a200adkocd14v4ly20tinc7z'>
+            <connection class='textscan' directory='C:/Users/wassi/Desktop/retail-analytics/data/processed' filename='rfm_segments.csv' password='' server='' workgroup-auth-mode='as-is' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.1633a200adkocd14v4ly20tinc7z' name='rfm_segments.csv' table='[rfm_segments#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='fr_FR'>
+            <column datatype='string' name='customer_unique_id' ordinal='0' />
+            <column datatype='integer' name='recency_days' ordinal='1' />
+            <column datatype='integer' name='frequency' ordinal='2' />
+            <column datatype='real' name='monetary' ordinal='3' />
+            <column datatype='integer' name='r_score' ordinal='4' />
+            <column datatype='integer' name='f_score' ordinal='5' />
+            <column datatype='integer' name='m_score' ordinal='6' />
+            <column datatype='string' name='segment' ordinal='7' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[rfm_segments.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;fr_FR&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;€&quot;</attribute>
+              <attribute datatype='string' name='decimal-char'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;fr_FR&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='thousands-char'>&quot; &quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>customer_unique_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[customer_unique_id]</local-name>
+            <parent-name>[rfm_segments.csv]</parent-name>
+            <remote-alias>customer_unique_id</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LFR_RFR' />
+            <object-id>[rfm_segments.csv_252F28CACFE34FA5A202F17D94B97A23]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>recency_days</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[recency_days]</local-name>
+            <parent-name>[rfm_segments.csv]</parent-name>
+            <remote-alias>recency_days</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[rfm_segments.csv_252F28CACFE34FA5A202F17D94B97A23]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>frequency</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[frequency]</local-name>
+            <parent-name>[rfm_segments.csv]</parent-name>
+            <remote-alias>frequency</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[rfm_segments.csv_252F28CACFE34FA5A202F17D94B97A23]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>monetary</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[monetary]</local-name>
+            <parent-name>[rfm_segments.csv]</parent-name>
+            <remote-alias>monetary</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[rfm_segments.csv_252F28CACFE34FA5A202F17D94B97A23]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>r_score</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[r_score]</local-name>
+            <parent-name>[rfm_segments.csv]</parent-name>
+            <remote-alias>r_score</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[rfm_segments.csv_252F28CACFE34FA5A202F17D94B97A23]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>f_score</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[f_score]</local-name>
+            <parent-name>[rfm_segments.csv]</parent-name>
+            <remote-alias>f_score</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[rfm_segments.csv_252F28CACFE34FA5A202F17D94B97A23]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>m_score</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[m_score]</local-name>
+            <parent-name>[rfm_segments.csv]</parent-name>
+            <remote-alias>m_score</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[rfm_segments.csv_252F28CACFE34FA5A202F17D94B97A23]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>segment</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[segment]</local-name>
+            <parent-name>[rfm_segments.csv]</parent-name>
+            <remote-alias>segment</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LFR_RFR' />
+            <object-id>[rfm_segments.csv_252F28CACFE34FA5A202F17D94B97A23]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='rfm_segments.csv' datatype='table' name='[__tableau_internal_object_id__].[rfm_segments.csv_252F28CACFE34FA5A202F17D94B97A23]' role='measure' type='quantitative' />
+      <column caption='Customer Unique Id' datatype='string' name='[customer_unique_id]' role='dimension' type='nominal' />
+      <column caption='F Score' datatype='integer' name='[f_score]' role='measure' type='quantitative' />
+      <column caption='Frequency' datatype='integer' name='[frequency]' role='measure' type='quantitative' />
+      <column caption='M Score' datatype='integer' name='[m_score]' role='measure' type='quantitative' />
+      <column caption='Monetary' datatype='real' name='[monetary]' role='measure' type='quantitative' />
+      <column caption='R Score' datatype='integer' name='[r_score]' role='measure' type='quantitative' />
+      <column caption='Recency Days' datatype='integer' name='[recency_days]' role='measure' type='quantitative' />
+      <column caption='Segment' datatype='string' name='[segment]' role='dimension' type='nominal' />
+      <extract count='-1' enabled='true' object-id='' units='records' user-specific='false'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='C:/Users/wassi/AppData/Local/Temp/TableauTemp/#TableauTemp_029fjlp15t6puw1fy84wn03wtblp.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>customer_unique_id</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[customer_unique_id]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>customer_unique_id</remote-alias>
+              <ordinal>0</ordinal>
+              <family>rfm_segments.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>93358</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LFR_RFR' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>recency_days</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[recency_days]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>recency_days</remote-alias>
+              <ordinal>1</ordinal>
+              <family>rfm_segments.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>1862</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>frequency</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[frequency]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>frequency</remote-alias>
+              <ordinal>2</ordinal>
+              <family>rfm_segments.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>7</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>monetary</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[monetary]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>monetary</remote-alias>
+              <ordinal>3</ordinal>
+              <family>rfm_segments.csv</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>18184</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>r_score</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[r_score]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>r_score</remote-alias>
+              <ordinal>4</ordinal>
+              <family>rfm_segments.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>f_score</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[f_score]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>f_score</remote-alias>
+              <ordinal>5</ordinal>
+              <family>rfm_segments.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>m_score</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[m_score]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>m_score</remote-alias>
+              <ordinal>6</ordinal>
+              <family>rfm_segments.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>segment</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[segment]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>segment</remote-alias>
+              <ordinal>7</ordinal>
+              <family>rfm_segments.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LFR_RFR' />
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Germany&quot;' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+      <object-graph>
+        <objects>
+          <object caption='rfm_segments.csv' id='rfm_segments.csv_252F28CACFE34FA5A202F17D94B97A23'>
+            <properties context=''>
+              <relation connection='textscan.1633a200adkocd14v4ly20tinc7z' name='rfm_segments.csv' table='[rfm_segments#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='fr_FR'>
+                  <column datatype='string' name='customer_unique_id' ordinal='0' />
+                  <column datatype='integer' name='recency_days' ordinal='1' />
+                  <column datatype='integer' name='frequency' ordinal='2' />
+                  <column datatype='real' name='monetary' ordinal='3' />
+                  <column datatype='integer' name='r_score' ordinal='4' />
+                  <column datatype='integer' name='f_score' ordinal='5' />
+                  <column datatype='integer' name='m_score' ordinal='6' />
+                  <column datatype='string' name='segment' ordinal='7' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+    <datasource caption='cohort_retention' inline='true' name='federated.0k4h14e1f5iy4n1e085ws0571l3v' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='cohort_retention' name='textscan.0gxhjot1i3hzkh10e5kr50ml8bdx'>
+            <connection class='textscan' directory='C:/Users/wassi/Desktop/retail-analytics/data/processed' filename='cohort_retention.csv' password='' server='' workgroup-auth-mode='as-is' />
+          </named-connection>
+        </named-connections>
+        <relation name='Pivot' type='pivot'>
+          <columns>
+            <column datatype='string' name='Pivot Field Names' />
+            <column datatype='real' name='Pivot Field Values' />
+          </columns>
+          <tag name='Pivot Field Names'>
+            <value name='[0]' />
+            <value name='[10]' />
+            <value name='[11]' />
+            <value name='[12]' />
+            <value name='[13]' />
+            <value name='[14]' />
+            <value name='[15]' />
+            <value name='[16]' />
+            <value name='[17]' />
+            <value name='[19]' />
+            <value name='[1]' />
+            <value name='[20]' />
+            <value name='[2]' />
+            <value name='[3]' />
+            <value name='[4]' />
+            <value name='[5]' />
+            <value name='[6]' />
+            <value name='[7]' />
+            <value name='[8]' />
+            <value name='[9]' />
+          </tag>
+          <groups>
+            <group name='Pivot Field Values'>
+              <field name='[cohort_retention.csv].[0]' />
+              <field name='[cohort_retention.csv].[10]' />
+              <field name='[cohort_retention.csv].[11]' />
+              <field name='[cohort_retention.csv].[12]' />
+              <field name='[cohort_retention.csv].[13]' />
+              <field name='[cohort_retention.csv].[14]' />
+              <field name='[cohort_retention.csv].[15]' />
+              <field name='[cohort_retention.csv].[16]' />
+              <field name='[cohort_retention.csv].[17]' />
+              <field name='[cohort_retention.csv].[19]' />
+              <field name='[cohort_retention.csv].[1]' />
+              <field name='[cohort_retention.csv].[20]' />
+              <field name='[cohort_retention.csv].[2]' />
+              <field name='[cohort_retention.csv].[3]' />
+              <field name='[cohort_retention.csv].[4]' />
+              <field name='[cohort_retention.csv].[5]' />
+              <field name='[cohort_retention.csv].[6]' />
+              <field name='[cohort_retention.csv].[7]' />
+              <field name='[cohort_retention.csv].[8]' />
+              <field name='[cohort_retention.csv].[9]' />
+            </group>
+          </groups>
+          <relation connection='textscan.0gxhjot1i3hzkh10e5kr50ml8bdx' name='cohort_retention.csv' table='[cohort_retention#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='fr_FR'>
+              <column datatype='date' name='cohort_month' ordinal='0' />
+              <column datatype='real' name='0' ordinal='1' />
+              <column datatype='real' name='1' ordinal='2' />
+              <column datatype='real' name='2' ordinal='3' />
+              <column datatype='real' name='3' ordinal='4' />
+              <column datatype='real' name='4' ordinal='5' />
+              <column datatype='real' name='5' ordinal='6' />
+              <column datatype='real' name='6' ordinal='7' />
+              <column datatype='real' name='7' ordinal='8' />
+              <column datatype='real' name='8' ordinal='9' />
+              <column datatype='real' name='9' ordinal='10' />
+              <column datatype='real' name='10' ordinal='11' />
+              <column datatype='real' name='11' ordinal='12' />
+              <column datatype='real' name='12' ordinal='13' />
+              <column datatype='real' name='13' ordinal='14' />
+              <column datatype='real' name='14' ordinal='15' />
+              <column datatype='real' name='15' ordinal='16' />
+              <column datatype='real' name='16' ordinal='17' />
+              <column datatype='real' name='17' ordinal='18' />
+              <column datatype='real' name='19' ordinal='19' />
+              <column datatype='real' name='20' ordinal='20' />
+            </columns>
+          </relation>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[cohort_retention.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;fr_FR&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;€&quot;</attribute>
+              <attribute datatype='string' name='decimal-char'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;fr_FR&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='thousands-char'>&quot; &quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>cohort_month</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[cohort_month]</local-name>
+            <parent-name>[cohort_retention.csv]</parent-name>
+            <remote-alias>cohort_month</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[cohort_retention.csv_F29D4A720B4F47FAA5B758E2CAC6DB8B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Pivot Field Names</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Pivot Field Names]</local-name>
+            <parent-name>[Pivot]</parent-name>
+            <remote-alias>Pivot Field Names</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[cohort_retention.csv_F29D4A720B4F47FAA5B758E2CAC6DB8B]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Pivot Field Values</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Pivot Field Values]</local-name>
+            <parent-name>[Pivot]</parent-name>
+            <remote-alias>Pivot Field Values</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[cohort_retention.csv_F29D4A720B4F47FAA5B758E2CAC6DB8B]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Month Offset' datatype='string' name='[Pivot Field Names]' role='dimension' type='nominal' />
+      <column caption='Customers' datatype='real' name='[Pivot Field Values]' role='measure' type='quantitative' />
+      <column caption='cohort_retention.csv' datatype='table' name='[__tableau_internal_object_id__].[cohort_retention.csv_F29D4A720B4F47FAA5B758E2CAC6DB8B]' role='measure' type='quantitative' />
+      <column caption='Cohort Month' datatype='date' name='[cohort_month]' role='dimension' type='ordinal' />
+      <extract count='-1' enabled='true' object-id='' units='records' user-specific='false'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='C:/Users/wassi/AppData/Local/Temp/TableauTemp/#TableauTemp_158tk3q1duqqiy19k685b1gk0aah.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>cohort_month</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[cohort_month]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>cohort_month</remote-alias>
+              <ordinal>0</ordinal>
+              <family>cohort_retention.csv</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>23</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Pivot Field Names</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Pivot Field Names]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Pivot Field Names</remote-alias>
+              <ordinal>1</ordinal>
+              <family>Pivot</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>20</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='binary' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Pivot Field Values</remote-name>
+              <remote-type>5</remote-type>
+              <local-name>[Pivot Field Values]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Pivot Field Values</remote-alias>
+              <ordinal>2</ordinal>
+              <family>Pivot</family>
+              <local-type>real</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>126</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Germany&quot;' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+      <object-graph>
+        <objects>
+          <object caption='cohort_retention.csv' id='cohort_retention.csv_F29D4A720B4F47FAA5B758E2CAC6DB8B'>
+            <properties context=''>
+              <relation name='Pivot' type='pivot'>
+                <columns>
+                  <column datatype='string' name='Pivot Field Names' />
+                  <column datatype='real' name='Pivot Field Values' />
+                </columns>
+                <tag name='Pivot Field Names'>
+                  <value name='[0]' />
+                  <value name='[10]' />
+                  <value name='[11]' />
+                  <value name='[12]' />
+                  <value name='[13]' />
+                  <value name='[14]' />
+                  <value name='[15]' />
+                  <value name='[16]' />
+                  <value name='[17]' />
+                  <value name='[19]' />
+                  <value name='[1]' />
+                  <value name='[20]' />
+                  <value name='[2]' />
+                  <value name='[3]' />
+                  <value name='[4]' />
+                  <value name='[5]' />
+                  <value name='[6]' />
+                  <value name='[7]' />
+                  <value name='[8]' />
+                  <value name='[9]' />
+                </tag>
+                <groups>
+                  <group name='Pivot Field Values'>
+                    <field name='[cohort_retention.csv].[0]' />
+                    <field name='[cohort_retention.csv].[10]' />
+                    <field name='[cohort_retention.csv].[11]' />
+                    <field name='[cohort_retention.csv].[12]' />
+                    <field name='[cohort_retention.csv].[13]' />
+                    <field name='[cohort_retention.csv].[14]' />
+                    <field name='[cohort_retention.csv].[15]' />
+                    <field name='[cohort_retention.csv].[16]' />
+                    <field name='[cohort_retention.csv].[17]' />
+                    <field name='[cohort_retention.csv].[19]' />
+                    <field name='[cohort_retention.csv].[1]' />
+                    <field name='[cohort_retention.csv].[20]' />
+                    <field name='[cohort_retention.csv].[2]' />
+                    <field name='[cohort_retention.csv].[3]' />
+                    <field name='[cohort_retention.csv].[4]' />
+                    <field name='[cohort_retention.csv].[5]' />
+                    <field name='[cohort_retention.csv].[6]' />
+                    <field name='[cohort_retention.csv].[7]' />
+                    <field name='[cohort_retention.csv].[8]' />
+                    <field name='[cohort_retention.csv].[9]' />
+                  </group>
+                </groups>
+                <relation connection='textscan.0gxhjot1i3hzkh10e5kr50ml8bdx' name='cohort_retention.csv' table='[cohort_retention#csv]' type='table'>
+                  <columns character-set='UTF-8' header='yes' locale='fr_FR'>
+                    <column datatype='date' name='cohort_month' ordinal='0' />
+                    <column datatype='real' name='0' ordinal='1' />
+                    <column datatype='real' name='1' ordinal='2' />
+                    <column datatype='real' name='2' ordinal='3' />
+                    <column datatype='real' name='3' ordinal='4' />
+                    <column datatype='real' name='4' ordinal='5' />
+                    <column datatype='real' name='5' ordinal='6' />
+                    <column datatype='real' name='6' ordinal='7' />
+                    <column datatype='real' name='7' ordinal='8' />
+                    <column datatype='real' name='8' ordinal='9' />
+                    <column datatype='real' name='9' ordinal='10' />
+                    <column datatype='real' name='10' ordinal='11' />
+                    <column datatype='real' name='11' ordinal='12' />
+                    <column datatype='real' name='12' ordinal='13' />
+                    <column datatype='real' name='13' ordinal='14' />
+                    <column datatype='real' name='14' ordinal='15' />
+                    <column datatype='real' name='15' ordinal='16' />
+                    <column datatype='real' name='16' ordinal='17' />
+                    <column datatype='real' name='17' ordinal='18' />
+                    <column datatype='real' name='19' ordinal='19' />
+                    <column datatype='real' name='20' ordinal='20' />
+                  </columns>
+                </relation>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <mapsources>
+    <mapsource name='Tableau' />
+  </mapsources>
+  <worksheets>
+    <worksheet name='Cohort Retention heatmap'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='cohort_retention' name='federated.0k4h14e1f5iy4n1e085ws0571l3v' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0k4h14e1f5iy4n1e085ws0571l3v'>
+            <column caption='Month Offset' datatype='string' name='[Pivot Field Names]' role='dimension' type='nominal' />
+            <column caption='Customers' datatype='real' name='[Pivot Field Values]' role='measure' type='quantitative' />
+            <column caption='Cohort Month' datatype='date' name='[cohort_month]' role='dimension' type='ordinal' />
+            <column-instance column='[Pivot Field Names]' derivation='None' name='[none:Pivot Field Names:nk]' pivot='key' type='nominal' />
+            <column-instance column='[cohort_month]' derivation='None' name='[none:cohort_month:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Pivot Field Values]' derivation='Sum' name='[sum:Pivot Field Values:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[cohort_month]' derivation='Month-Trunc' name='[tmn:cohort_month:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='quantitative' column='[federated.0k4h14e1f5iy4n1e085ws0571l3v].[none:cohort_month:qk]' included-values='in-range'>
+            <min>#2017-01-01#</min>
+            <max>#2018-08-01#</max>
+          </filter>
+          <slices>
+            <column>[federated.0k4h14e1f5iy4n1e085ws0571l3v].[none:cohort_month:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.0k4h14e1f5iy4n1e085ws0571l3v].[tmn:cohort_month:qk]' scope='rows' value='Cohort Month' />
+            <encoding attr='space' class='0' field='[federated.0k4h14e1f5iy4n1e085ws0571l3v].[tmn:cohort_month:qk]' field-type='quantitative' max='#2018-08-31 19:09:31#' min='#2017-01-01 00:00:00#' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Square' />
+            <encodings>
+              <color column='[federated.0k4h14e1f5iy4n1e085ws0571l3v].[sum:Pivot Field Values:qk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.0k4h14e1f5iy4n1e085ws0571l3v].[tmn:cohort_month:qk]</rows>
+        <cols>[federated.0k4h14e1f5iy4n1e085ws0571l3v].[none:Pivot Field Names:nk]</cols>
+      </table>
+      <simple-id uuid='{64221456-F373-41C5-9DCB-03D1CC8AA166}' />
+    </worksheet>
+    <worksheet name='RFM Segments'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='rfm_segments' name='federated.0wloltz0rl5azh1es5f1u0tgdfsx' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0wloltz0rl5azh1es5f1u0tgdfsx'>
+            <column-instance column='[__tableau_internal_object_id__].[rfm_segments.csv_252F28CACFE34FA5A202F17D94B97A23]' derivation='Count' name='[__tableau_internal_object_id__].[cnt:rfm_segments.csv_252F28CACFE34FA5A202F17D94B97A23:qk]' pivot='key' type='quantitative' />
+            <column caption='rfm_segments.csv' datatype='table' name='[__tableau_internal_object_id__].[rfm_segments.csv_252F28CACFE34FA5A202F17D94B97A23]' role='measure' type='quantitative' />
+            <column-instance column='[segment]' derivation='None' name='[none:segment:nk]' pivot='key' type='nominal' />
+            <column caption='Segment' datatype='string' name='[segment]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.0wloltz0rl5azh1es5f1u0tgdfsx].[none:segment:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.0wloltz0rl5azh1es5f1u0tgdfsx].[__tableau_internal_object_id__].[cnt:rfm_segments.csv_252F28CACFE34FA5A202F17D94B97A23:qk]' shelf='rows' />
+          </shelf-sorts>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.0wloltz0rl5azh1es5f1u0tgdfsx].[__tableau_internal_object_id__].[cnt:rfm_segments.csv_252F28CACFE34FA5A202F17D94B97A23:qk]' scope='cols' value='Customers' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.0wloltz0rl5azh1es5f1u0tgdfsx].[__tableau_internal_object_id__].[cnt:rfm_segments.csv_252F28CACFE34FA5A202F17D94B97A23:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0wloltz0rl5azh1es5f1u0tgdfsx].[none:segment:nk]</rows>
+        <cols>[federated.0wloltz0rl5azh1es5f1u0tgdfsx].[__tableau_internal_object_id__].[cnt:rfm_segments.csv_252F28CACFE34FA5A202F17D94B97A23:qk]</cols>
+      </table>
+      <simple-id uuid='{A9349C8C-6784-491B-8D9C-AFBA59C69AA2}' />
+    </worksheet>
+    <worksheet name='Revenue Trend'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontcolor='#000000' fontname='Benton Sans Book'>Revenue Trend</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='monthly_revenue' name='federated.1jnw30x1row32m15sl93p1xgl2uu' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1jnw30x1row32m15sl93p1xgl2uu'>
+            <column-instance column='[purchase_month]' derivation='None' name='[none:purchase_month:qk]' pivot='key' type='quantitative' />
+            <column caption='Month' datatype='date' name='[purchase_month]' role='dimension' type='ordinal' />
+            <column caption='Revenue' datatype='real' name='[revenue]' role='measure' type='quantitative' />
+            <column-instance column='[revenue]' derivation='Sum' name='[sum:revenue:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[purchase_month]' derivation='Month-Trunc' name='[tmn:purchase_month:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='quantitative' column='[federated.1jnw30x1row32m15sl93p1xgl2uu].[none:purchase_month:qk]' included-values='in-range'>
+            <min>#2017-01-01#</min>
+            <max>#2018-08-01#</max>
+          </filter>
+          <slices>
+            <column>[federated.1jnw30x1row32m15sl93p1xgl2uu].[none:purchase_month:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.1jnw30x1row32m15sl93p1xgl2uu].[tmn:purchase_month:qk]' scope='cols' value='Month' />
+            <format attr='title' class='0' field='[federated.1jnw30x1row32m15sl93p1xgl2uu].[sum:revenue:qk]' scope='rows' value='Revenue (BRL)' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows>[federated.1jnw30x1row32m15sl93p1xgl2uu].[sum:revenue:qk]</rows>
+        <cols>[federated.1jnw30x1row32m15sl93p1xgl2uu].[tmn:purchase_month:qk]</cols>
+      </table>
+      <simple-id uuid='{DB438A3E-D473-4D3E-BB43-E7D71E2027CF}' />
+    </worksheet>
+    <worksheet name='Revenue by State'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='state_revenue' name='federated.1n7uct21z0f6ld112wmw21e7do8p' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.1n7uct21z0f6ld112wmw21e7do8p'>
+            <column caption='Customer State' datatype='string' name='[customer_state]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+            <column-instance column='[customer_state]' derivation='None' name='[none:customer_state:nk]' pivot='key' type='nominal' />
+            <column caption='Revenue' datatype='real' name='[revenue]' role='measure' type='quantitative' />
+            <column-instance column='[revenue]' derivation='Sum' name='[sum:revenue:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1n7uct21z0f6ld112wmw21e7do8p].[sum:revenue:qk]' />
+              <lod column='[federated.1n7uct21z0f6ld112wmw21e7do8p].[none:customer_state:nk]' />
+              <geometry column='[federated.1n7uct21z0f6ld112wmw21e7do8p].[Geometry (generated)]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.1n7uct21z0f6ld112wmw21e7do8p].[Latitude (generated)]</rows>
+        <cols>[federated.1n7uct21z0f6ld112wmw21e7do8p].[Longitude (generated)]</cols>
+      </table>
+      <simple-id uuid='{E18F3CE2-55AF-4E46-BC0A-AEEACBB81866}' />
+    </worksheet>
+    <worksheet name='Top Categories'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='category_revenue' name='federated.0vg9upq0l62xdz19r7h6309e9s7h' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0vg9upq0l62xdz19r7h6309e9s7h'>
+            <column caption='Category' datatype='string' name='[category]' role='dimension' type='nominal' />
+            <column-instance column='[category]' derivation='None' name='[none:category:nk]' pivot='key' type='nominal' />
+            <column caption='Revenue' datatype='real' name='[revenue]' role='measure' type='quantitative' />
+            <column-instance column='[revenue]' derivation='Sum' name='[sum:revenue:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.0vg9upq0l62xdz19r7h6309e9s7h].[none:category:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.0vg9upq0l62xdz19r7h6309e9s7h].[sum:revenue:qk]' shelf='rows' />
+          </shelf-sorts>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0vg9upq0l62xdz19r7h6309e9s7h].[sum:revenue:qk]' />
+              <text column='[federated.0vg9upq0l62xdz19r7h6309e9s7h].[sum:revenue:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0vg9upq0l62xdz19r7h6309e9s7h].[none:category:nk]</rows>
+        <cols>[federated.0vg9upq0l62xdz19r7h6309e9s7h].[sum:revenue:qk]</cols>
+      </table>
+      <simple-id uuid='{354858A0-FB76-4F65-9F68-CD4F7A4103C5}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard enable-sort-zone-taborder='true' name='Olist Marketplace Analytics'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontcolor='#000000' fontname='Benton Sans Book'>Olist Marketplace Analytics</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <style />
+      <size maxheight='768' maxwidth='1366' minheight='768' minwidth='1366' preset-index='0' sizing-mode='fixed' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='97916' id='18' param='vert' type-v2='layout-flow' w='98828' x='586' y='1042'>
+            <zone h='5990' id='19' type-v2='title' w='98828' x='586' y='1042'>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+            <zone h='91926' id='8' param='horz' type-v2='layout-flow' w='98828' x='586' y='7032'>
+              <zone h='91926' id='6' type-v2='layout-basic' w='98828' x='586' y='7032'>
+                <zone h='45962' id='5' name='Top Categories' w='49415' x='49999' y='7032'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone h='45964' id='12' name='RFM Segments' w='24708' x='74706' y='52994'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone h='45962' id='13' name='Revenue Trend' w='49413' x='586' y='7032'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone h='45964' id='14' name='Cohort Retention heatmap' w='49413' x='586' y='52994'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone h='45964' id='16' name='Revenue by State' w='24707' x='49999' y='52994'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <layout-options>
+            <title>
+              <formatted-text>
+                <run fontcolor='#000000' fontname='Benton Sans Book'>Olist Marketplace Analytics</run>
+              </formatted-text>
+            </title>
+          </layout-options>
+          <size maxheight='1550' minheight='1550' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='23' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='97916' id='22' param='vert' type-v2='layout-flow' w='98828' x='586' y='1042'>
+                <zone h='5990' id='19' type-v2='title' w='98828' x='586' y='1042'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='45962' id='13' is-fixed='true' name='Revenue Trend' w='49413' x='586' y='7032'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='45962' id='5' is-fixed='true' name='Top Categories' w='49415' x='49999' y='7032'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='45964' id='14' is-fixed='true' name='Cohort Retention heatmap' w='49413' x='586' y='52994'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='45964' id='16' is-fixed='true' name='Revenue by State' w='24707' x='49999' y='52994'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='45964' id='12' is-fixed='true' name='RFM Segments' w='24708' x='74706' y='52994'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{5C9CCB8D-BE41-4853-8105-F5E6C200B93A}' />
+    </dashboard>
+  </dashboards>
+  <windows pres-mode='true' saved-dpi-scale-factor='1.25' source-height='141'>
+    <window class='worksheet' name='Revenue Trend'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{440ADBFE-C2BB-491A-97E8-CD48F2D431AD}' />
+    </window>
+    <window class='dashboard' maximized='true' name='Olist Marketplace Analytics'>
+      <viewpoints>
+        <viewpoint name='Cohort Retention heatmap'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='RFM Segments'>
+          <zoom type='fit-width' />
+        </viewpoint>
+        <viewpoint name='Revenue Trend'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Revenue by State'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Top Categories'>
+          <zoom type='fit-width' />
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{B642C5B0-6F23-4093-AC6B-FFB83C7F9FCF}' />
+    </window>
+    <window class='worksheet' name='Top Categories'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0vg9upq0l62xdz19r7h6309e9s7h].[sum:revenue:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='fit-width' />
+      </viewpoint>
+      <simple-id uuid='{B822F8D3-64F1-4C5D-812A-8F6F391E8F73}' />
+    </window>
+    <window class='worksheet' name='Revenue by State'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1n7uct21z0f6ld112wmw21e7do8p].[sum:revenue:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{8A4220BE-C3F7-472F-A0C7-642D7BF195A5}' />
+    </window>
+    <window class='worksheet' name='RFM Segments'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='fit-width' />
+      </viewpoint>
+      <simple-id uuid='{3163369C-9491-464A-9881-0E84AC91FFA4}' />
+    </window>
+    <window class='worksheet' name='Cohort Retention heatmap'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0k4h14e1f5iy4n1e085ws0571l3v].[sum:Pivot Field Values:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{800661D9-2C66-4070-8BAB-155287211C14}' />
+    </window>
+  </windows>
+</workbook>
