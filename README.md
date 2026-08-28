@@ -1,16 +1,16 @@
-# Olist Marketplace Analytics — From Raw Data to Retention Strategy
+# Olist Marketplace Analytics: From Raw Data to Retention Strategy
 
 End-to-end analytics case study on the **Olist Brazilian e-commerce** dataset
 (~100k orders, 2016–2018). I take raw, messy, multi-table data all the way to an
-interactive dashboard and a set of business recommendations — the full workflow of
-a data analyst.
+interactive dashboard and a set of business recommendations, covering the full
+workflow of a data analyst.
 
 **Skills demonstrated:** SQL (DuckDB) · data cleaning & modeling · RFM segmentation ·
 cohort retention · A/B / hypothesis testing · Python EDA (pandas, plotly) ·
 interactive BI dashboard (Tableau) · data storytelling.
 
-📊 **Live dashboard:** **[View on Tableau Public →](https://public.tableau.com/app/profile/wassim.mabrouk/viz/OlistMarketplaceAnalytics_17878955790140/OlistMarketplaceAnalytics)**
-📄 **Executive summary:** [`reports/executive_summary.pdf`](reports/) _<!-- TODO -->_
+📊 **Live dashboard:** **[View on Tableau Public](https://public.tableau.com/app/profile/wassim.mabrouk/viz/OlistMarketplaceAnalytics_17878955790140/OlistMarketplaceAnalytics)**
+📄 **Executive summary:** [`reports/executive_summary.pdf`](reports/executive_summary.pdf)
 
 <p align="center">
   <a href="https://public.tableau.com/app/profile/wassim.mabrouk/viz/OlistMarketplaceAnalytics_17878955790140/OlistMarketplaceAnalytics">
@@ -24,7 +24,7 @@ interactive BI dashboard (Tableau) · data storytelling.
 
 You're the analyst at an online marketplace. Leadership wants to know:
 
-1. **Where does revenue come from** — which categories, regions, and months drive it?
+1. **Where does revenue come from?** Which categories, regions, and months drive it?
 2. **Who are our best customers**, and how many are we losing after one purchase?
 3. **Does delivery speed or review score affect whether a customer buys again?**
 4. **What should we do about it?**
@@ -35,11 +35,11 @@ Analysis run on **110,197 delivered order-items** / **93,358 customers**.
 
 1. **The marketplace barely retains anyone.** Only **3.0%** of customers ever place a
    second order (2,801 repeat vs 90,557 one-time). Cohort retention collapses to
-   near-zero the month after acquisition — this is an acquisition-heavy, retention-weak
+   near-zero the month after acquisition. This is an acquisition-heavy, retention-weak
    business, and retention is the single biggest lever.
 2. **Faster delivery means happier customers.** Orders delivered in ≤10 days (the
    median) average **4.38★** vs **3.93★** for slower ones, and their 5-star rate is
-   **66.6%** vs **51.5%** — a **+15-point** gap. The difference is statistically
+   **66.6%** vs **51.5%**, a **+15-point** gap. The difference is statistically
    unambiguous (Welch t = 55.4, p ≪ 0.001; two-proportion z = 47.5) with a
    *small-to-moderate* effect size (Cohen's d = 0.36).
 3. **Because satisfied customers are the ones who come back, cutting delivery time is
@@ -50,7 +50,7 @@ Analysis run on **110,197 delivered order-items** / **93,358 customers**.
   <img src="dashboard/screenshots/cohort_retention.png" width="53%" alt="Cohort retention heatmap"/>
 </p>
 
-### A/B test detail — delivery speed vs. review score
+### A/B test detail: delivery speed vs. review score
 
 | Group (delivery) | Orders | Mean score | 5-star rate |
 |------------------|-------:|-----------:|------------:|
@@ -60,7 +60,7 @@ Analysis run on **110,197 delivered order-items** / **93,358 customers**.
 Welch t-test: t = 55.4, p ≪ 0.001 · Cohen's d = 0.36 · two-proportion z-test: z = 47.5, p ≪ 0.001.
 
 > **Reading it honestly:** with ~95k orders, almost any real difference reaches
-> significance — so the effect *size* (d ≈ 0.36, a ~0.46-point lift on a 5-point scale)
+> significance, so the effect *size* (d ≈ 0.36, a ~0.46-point lift on a 5-point scale)
 > is what matters. The signal is real and worth acting on, but moderate, not dramatic.
 
 <p align="center">
@@ -70,7 +70,7 @@ Welch t-test: t = 55.4, p ≪ 0.001 · Cohen's d = 0.36 · two-proportion z-test
 ## Data
 
 **Source:** [Brazilian E-Commerce Public Dataset by Olist](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce) (Kaggle).
-Download and unzip into `data/raw/` — see [`data/README.md`](data/README.md).
+Download and unzip into `data/raw/`, following [`data/README.md`](data/README.md).
 Raw CSVs are **not** committed (see `.gitignore`); the pipeline rebuilds everything.
 
 ## Tech stack
@@ -93,8 +93,8 @@ retail-analytics/
 │   ├── 03_rfm.sql           RFM customer segmentation
 │   └── 04_cohort_retention.sql   monthly cohort retention
 ├── src/build_db.py      build the DuckDB from raw CSVs
-├── notebooks/           EDA + A/B test (added next)
-├── dashboard/           Tableau workbook + screenshots
+├── notebooks/           EDA + A/B test
+├── dashboard/           dashboard image + chart screenshots
 ├── reports/             executive summary (PDF)
 ├── data/                raw CSVs (git-ignored) + how to get them
 └── requirements.txt
@@ -115,18 +115,18 @@ duckdb data/olist.duckdb ".read sql/03_rfm.sql"
 ## Methodology notes
 
 - **Customer identity:** Olist's `customer_id` is unique *per order*. The real
-  cross-order identity is `customer_unique_id` — RFM and cohort analysis use that, or
-  every customer looks like a one-time buyer. (A common trap with this dataset.)
+  cross-order identity is `customer_unique_id`, which RFM and cohort analysis rely on;
+  otherwise every customer looks like a one-time buyer. (A common trap with this dataset.)
 - **RFM interpretation:** because 97% of customers buy only once, the **Frequency**
   dimension barely varies, so the segments are effectively driven by Recency and
   Monetary value. "Champions" here are high-recency, high-spend *first-time* buyers, not
-  proven repeat loyalists — a direct consequence of the retention finding, not a bug.
+  proven repeat loyalists. That is a direct consequence of the retention finding, not a bug.
 - **Scope:** analysis is on `delivered` orders with a positive item price, so revenue
   reflects completed sales.
 - **Cohort scope:** cohort analysis is limited to Jan 2017 onward. The 2016 cohorts
   are excluded because the marketplace was barely active then (some months had ~1
   customer), which makes their retention percentages noise rather than signal. Recent
-  cohorts naturally have fewer observed months — the triangular shape of the heatmap is
+  cohorts naturally have fewer observed months, so the triangular shape of the heatmap is
   expected, not missing data.
 - **Revenue** = item `price` + `freight_value`.
 
