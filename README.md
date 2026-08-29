@@ -1,7 +1,7 @@
 # Olist Marketplace Analytics: From Raw Data to Retention Strategy
 
 End-to-end analytics case study on the **Olist Brazilian e-commerce** dataset
-(~100k orders, 2016–2018). I take raw, messy, multi-table data all the way to an
+(~100k orders, 2016 to 2018). I take raw, messy, multi-table data all the way to an
 interactive dashboard and a set of business recommendations, covering the full
 workflow of a data analyst.
 
@@ -147,51 +147,33 @@ duckdb data/olist.duckdb ".read sql/03_rfm.sql"
   <img src="dashboard/screenshots/delivery_days.png" width="60%" alt="Delivery time distribution"/>
 </p>
 
-## Power BI rebuild — the modeling layer
+## Power BI rebuild: the modeling layer
 
-The same five views, rebuilt in **Power BI Desktop** on a proper **star schema**.
-Where the Tableau build focuses on storytelling from flat extracts, this version
-demonstrates the modeling that BI roles actually ask for: a dimensional model, a
-dedicated date table, and metrics computed live in **DAX** rather than pre-baked.
+The same five views, rebuilt in **Power BI Desktop** on a proper **star schema**. Where the Tableau build focuses on storytelling from flat extracts, this version demonstrates the modeling that BI roles actually ask for: a dimensional model, a dedicated date table, and metrics computed live in **DAX** rather than pre-baked. It exercises Power BI, DAX, Power Query (M), star-schema data modeling (Datenmodellierung), time intelligence, RFM, and cohort analysis.
 
 📥 **Open it:** [`powerbi/retail-analytics.pbix`](powerbi/retail-analytics.pbix) (Power BI Desktop, free)
 
 **What it shows beyond the Tableau version:**
 
-- **Star schema** — a single `fct_order_items` fact surrounded by `dim_date`,
-  `dim_customer`, `dim_product`, and `dim_geography`, with single-direction
-  relationships. The fact is derived from the same DuckDB pipeline, so every figure
-  matches the Tableau dashboard.
-- **Date table + time intelligence** — `dim_date` is marked as the model's date
-  table, enabling DAX time-intelligence measures (`Revenue MoM %`, `Revenue YoY %`).
-- **RFM computed live in DAX** — Recency / Frequency / Monetary and the quintile
-  scores are calculated columns on `dim_customer` (`RANKX`-based quintiles), so the
-  segmentation is part of the model, not a precomputed CSV. Same honest caveat as
-  above: with 97% one-time buyers, Frequency is degenerate, so segments are driven by
-  Recency × Monetary.
-- **Geocode-free map** — `dim_geography` carries state centroid lat/long, so the
-  Revenue-by-State map plots reliably without depending on Bing's geocoding of
-  Brazilian states.
-- **Cohort heatmap** — the monthly retention matrix with conditional-formatting
-  colour scale, reproducing the Tableau cohort finding.
-
-*Model keywords: Power BI, DAX, Power Query (M), Datenmodellierung / data modeling,
-star schema, time intelligence, RFM, cohort analysis.*
+- **Star schema.** A single `fct_order_items` fact surrounded by `dim_date`, `dim_customer`, `dim_product`, and `dim_geography`, with single-direction relationships. The fact is derived from the same DuckDB pipeline, so every figure matches the Tableau dashboard.
+- **Date table + time intelligence.** `dim_date` is marked as the model's date table, enabling DAX time-intelligence measures (`Revenue MoM %`, `Revenue YoY %`).
+- **RFM computed live in DAX.** Recency, Frequency, and Monetary plus the quintile scores are calculated columns on `dim_customer` (`RANKX`-based quintiles), so the segmentation is part of the model, not a precomputed CSV. Same honest caveat as above: with 97% one-time buyers, Frequency is degenerate, so segments are driven by Recency × Monetary.
+- **Geocode-free map.** `dim_geography` carries state centroid lat/long, so the Revenue-by-State map plots reliably without depending on Bing's geocoding of Brazilian states.
+- **Cohort heatmap.** The monthly retention matrix with a conditional-formatting colour scale, reproducing the Tableau cohort finding.
 
 <p align="center">
-  <img src="powerbi/screenshots/01-revenue-trend.png" width="48%" alt="Power BI — revenue trend with KPI cards"/>
-  <img src="powerbi/screenshots/02-top-categories.png" width="48%" alt="Power BI — top categories by revenue"/>
+  <img src="powerbi/screenshots/01-revenue-trend.png" width="48%" alt="Power BI: revenue trend with KPI cards"/>
+  <img src="powerbi/screenshots/02-top-categories.png" width="48%" alt="Power BI: top categories by revenue"/>
 </p>
 <p align="center">
-  <img src="powerbi/screenshots/03-revenue-by-state.png" width="48%" alt="Power BI — revenue by state map"/>
-  <img src="powerbi/screenshots/04-rfm-segments.png" width="48%" alt="Power BI — RFM customer segments"/>
+  <img src="powerbi/screenshots/03-revenue-by-state.png" width="48%" alt="Power BI: revenue by state map"/>
+  <img src="powerbi/screenshots/04-rfm-segments.png" width="48%" alt="Power BI: RFM customer segments"/>
 </p>
 <p align="center">
-  <img src="powerbi/screenshots/05-cohort-retention.png" width="60%" alt="Power BI — monthly cohort retention heatmap"/>
+  <img src="powerbi/screenshots/05-cohort-retention.png" width="60%" alt="Power BI: monthly cohort retention heatmap"/>
 </p>
 
-**Rebuild it yourself:** `powerbi/export_star_schema.py` reads `data/olist.duckdb`
-and writes the star-schema tables to `powerbi/data/`, which the `.pbix` imports.
+**Rebuild it yourself:** `powerbi/export_star_schema.py` reads `data/olist.duckdb` and writes the star-schema tables to `powerbi/data/`, which the `.pbix` imports.
 
 ```bash
 py powerbi/export_star_schema.py
