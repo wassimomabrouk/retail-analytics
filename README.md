@@ -7,7 +7,8 @@ workflow of a data analyst.
 
 **Skills demonstrated:** SQL (DuckDB) · data cleaning & modeling · RFM segmentation ·
 cohort retention · A/B / hypothesis testing · Python EDA (pandas, plotly) ·
-interactive BI dashboard (Tableau) · data storytelling.
+interactive BI dashboards (**Tableau** & **Power BI**) · **star-schema data modeling** ·
+**DAX** · data storytelling.
 
 📊 **Live dashboard:** **[View on Tableau Public](https://public.tableau.com/app/profile/wassim.mabrouk/viz/OlistMarketplaceAnalytics_17878955790140/OlistMarketplaceAnalytics)**
 📄 **Executive summary:** [`reports/executive_summary.pdf`](reports/executive_summary.pdf)
@@ -80,6 +81,7 @@ Raw CSVs are **not** committed (see `.gitignore`); the pipeline rebuilds everyth
 | Storage / SQL    | DuckDB (in-repo, no server needed)    |
 | Analysis         | SQL + Python (pandas, scipy)          |
 | Visualization    | Plotly / Matplotlib (EDA), Tableau (dashboard) |
+| Modeling / BI    | Power BI Desktop (star schema, DAX, Power Query) |
 | Reproducibility  | `requirements.txt`, scripted build    |
 
 ## Repo structure
@@ -94,7 +96,8 @@ retail-analytics/
 │   └── 04_cohort_retention.sql   monthly cohort retention
 ├── src/build_db.py      build the DuckDB from raw CSVs
 ├── notebooks/           EDA + A/B test
-├── dashboard/           dashboard image + chart screenshots
+├── dashboard/           Tableau dashboard image + chart screenshots
+├── powerbi/             Power BI rebuild (.pbix, star-schema export, screenshots)
 ├── reports/             executive summary (PDF)
 ├── data/                raw CSVs (git-ignored) + how to get them
 └── requirements.txt
@@ -143,6 +146,56 @@ duckdb data/olist.duckdb ".read sql/03_rfm.sql"
 <p align="center">
   <img src="dashboard/screenshots/delivery_days.png" width="60%" alt="Delivery time distribution"/>
 </p>
+
+## Power BI rebuild — the modeling layer
+
+The same five views, rebuilt in **Power BI Desktop** on a proper **star schema**.
+Where the Tableau build focuses on storytelling from flat extracts, this version
+demonstrates the modeling that BI roles actually ask for: a dimensional model, a
+dedicated date table, and metrics computed live in **DAX** rather than pre-baked.
+
+📥 **Open it:** [`powerbi/retail-analytics.pbix`](powerbi/retail-analytics.pbix) (Power BI Desktop, free)
+
+**What it shows beyond the Tableau version:**
+
+- **Star schema** — a single `fct_order_items` fact surrounded by `dim_date`,
+  `dim_customer`, `dim_product`, and `dim_geography`, with single-direction
+  relationships. The fact is derived from the same DuckDB pipeline, so every figure
+  matches the Tableau dashboard.
+- **Date table + time intelligence** — `dim_date` is marked as the model's date
+  table, enabling DAX time-intelligence measures (`Revenue MoM %`, `Revenue YoY %`).
+- **RFM computed live in DAX** — Recency / Frequency / Monetary and the quintile
+  scores are calculated columns on `dim_customer` (`RANKX`-based quintiles), so the
+  segmentation is part of the model, not a precomputed CSV. Same honest caveat as
+  above: with 97% one-time buyers, Frequency is degenerate, so segments are driven by
+  Recency × Monetary.
+- **Geocode-free map** — `dim_geography` carries state centroid lat/long, so the
+  Revenue-by-State map plots reliably without depending on Bing's geocoding of
+  Brazilian states.
+- **Cohort heatmap** — the monthly retention matrix with conditional-formatting
+  colour scale, reproducing the Tableau cohort finding.
+
+*Model keywords: Power BI, DAX, Power Query (M), Datenmodellierung / data modeling,
+star schema, time intelligence, RFM, cohort analysis.*
+
+<p align="center">
+  <img src="powerbi/screenshots/01-revenue-trend.png" width="48%" alt="Power BI — revenue trend with KPI cards"/>
+  <img src="powerbi/screenshots/02-top-categories.png" width="48%" alt="Power BI — top categories by revenue"/>
+</p>
+<p align="center">
+  <img src="powerbi/screenshots/03-revenue-by-state.png" width="48%" alt="Power BI — revenue by state map"/>
+  <img src="powerbi/screenshots/04-rfm-segments.png" width="48%" alt="Power BI — RFM customer segments"/>
+</p>
+<p align="center">
+  <img src="powerbi/screenshots/05-cohort-retention.png" width="60%" alt="Power BI — monthly cohort retention heatmap"/>
+</p>
+
+**Rebuild it yourself:** `powerbi/export_star_schema.py` reads `data/olist.duckdb`
+and writes the star-schema tables to `powerbi/data/`, which the `.pbix` imports.
+
+```bash
+py powerbi/export_star_schema.py
+```
 
 ---
 
